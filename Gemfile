@@ -10,10 +10,21 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 
-gem 'sdoc', '~> 0.4.0',          group: :doc
+group :doc do
+  gem 'sdoc', '~> 0.4.0'
+end
 
-gem 'spring',        group: :development
+group :development do
+  gem 'spring'
+end
 
 group :development, :test do
+  # Use rspec for testing
   gem 'rspec-rails', '~>3.0'
+  # Use capybara for acceptance testing
+  gem 'capybara', '~>2.4.4'
+  # Use database_cleaner to clean db
+  gem 'database_cleaner', '~>1.4.0'
+  # Use guard-rspec to autorun tests
+  gem 'guard-rspec', '~>4.5.0', require: false
 end

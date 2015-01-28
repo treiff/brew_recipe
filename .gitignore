@@ -17,3 +17,5 @@
 
 # Ignore rspec config.
 .rspec
+# Ignore guardfile
+Guardfile
