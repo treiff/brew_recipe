@@ -19,6 +19,10 @@ group :development do
   gem 'spring'
 end
 
+group :test do
+  gem 'faker', '~>1.4.3'
+end
+
 group :development, :test do
   # Use rspec for testing
   gem 'rspec-rails', '~>3.0'
@@ -28,4 +32,6 @@ group :development, :test do
   gem 'database_cleaner', '~>1.4.0'
   # Use guard-rspec to autorun tests
   gem 'guard-rspec', '~>4.5.0', require: false
+  # Use factory-girl to generate factories
+  gem 'factory_girl_rails', '~>4.5.0'
 end
