@@ -52,4 +52,8 @@ RSpec.describe User, :type => :model do
     subject { build(:user, username: user.username.upcase) }
     it { should_not be_valid }
   end
+
+  it "is invalid with too short of a password" do
+    expect(build(:user, password: "#{"a"*5}", password_confirmation: "#{"a"*5}")).to_not be_valid
+  end
 end
