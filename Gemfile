@@ -10,6 +10,9 @@ gem 'bootstrap-sass', '~> 3.3.3'
 gem 'bcrypt', '~> 3.1.10'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
+# Use omniauth for facebook login
+gem 'omniauth', '~> 1.2.2'
+gem 'omniauth-facebook', '~> 2.0.0'
 
 group :doc do
   gem 'sdoc', '~> 0.4.0'
@@ -17,6 +20,10 @@ end
 
 group :development do
   gem 'spring'
+  # Use quiet assets to supress server output
+  gem 'quiet_assets', '~> 1.1.0'
+  # Use better errors for debugging
+  gem 'better_errors', '~> 2.1.1'
 end
 
 group :test do
