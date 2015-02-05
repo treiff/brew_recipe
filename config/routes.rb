@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   root 'static_pages#home'
-  get 'signup' => 'users#new'
+
+  resources :users, only: [:new, :create]
+
+  # Standard user sessions
+  get 'login' => 'sessions#new'
+  post 'login' => 'sessions#create'
 
   # Facebook routes
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
