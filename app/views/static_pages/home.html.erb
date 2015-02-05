@@ -5,7 +5,7 @@
   <p>
   home page for brew blog.
   </p>
-  <div class="btn btn-lg">
-    <%= link_to "Sign up", signup_path, class: "btn btn-lg btn-primary" %>
-  </div>
+  <% unless logged_in? %> 
+    <%= link_to "Sign up", new_user_path, class: "btn btn-lg btn-primary" %>
+  <% end %>
 </div>

@@ -4,7 +4,8 @@ class User < ActiveRecord::Base
   VALID_EMAIL = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
   validates :username, length: { maximum: 50 },
-                       uniqueness: { case_sensitive: false }
+                       uniqueness: { case_sensitive: false },
+                       :allow_blank => true
   validates :email,    presence: true, length: { maximum: 255 },
                        format: { with: VALID_EMAIL },
                        uniqueness: { case_sensitive: false }
