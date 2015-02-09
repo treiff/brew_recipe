@@ -4,6 +4,10 @@ require 'spec_helper'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'capybara/rspec'
+
+# Configure OmniAuth for testing
+OmniAuth.config.test_mode = true
+
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -34,6 +38,13 @@ RSpec.configure do |config|
 
   # Allow factorygirl without referencing FactoryGirl class
   config.include FactoryGirl::Syntax::Methods
+
+  # Include helper module for sessions
+  config.include Features::SessionHelpers, type: :feature
+  # Include helper model for omniauth
+  config.include Features::OmniAuthMocks, type: :feature
+  # Include helper for sessions controller
+  config.include SessionsHelper
 
   # Run tests in random order
   config.order = "random"
