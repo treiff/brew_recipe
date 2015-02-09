@@ -8,4 +8,14 @@ module ApplicationHelper
       "#{base_title} | #{page_title}"
     end
   end
+
+  # Return url for users avatar if available
+  def avatar_url(user)
+    if user.avatar_url.present?
+      user.avatar_url
+    else
+      gravatar_id = Digest::MD5::hexdigest(user.email)
+      "http://gravatar.com/avatar/#{gravatar_id}.png?s=48"
+    end
+  end
 end
