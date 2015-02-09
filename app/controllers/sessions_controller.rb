@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-
   def new
   end
 
@@ -16,6 +15,7 @@ class SessionsController < ApplicationController
         flash[:notice] = "Signed in successfully"
         redirect_to root_path
       else
+        flash.now[:error] = "Username/Password invalid"
         render 'new'
       end
     end

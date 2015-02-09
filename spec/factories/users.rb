@@ -5,4 +5,13 @@ FactoryGirl.define do
     f.password "password"
     f.password_confirmation "password"
   end
+
+  factory :valid_user, class: User do |f|
+    f.name "Trevor"
+    f.email "trevor@example.com"
+    f.username "trock"
+    f.password "myPassword1"
+    f.password_confirmation "myPassword1"
+  end
+
 end
