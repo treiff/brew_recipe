@@ -24,6 +24,7 @@ class User < ActiveRecord::Base
       user.password = SecureRandom.urlsafe_base64(n=6)
       user.password_confirmation = user.password
       user.email = auth.info.email
+      user.avatar_url = auth.info.image
       user.oauth_token = auth.credentials.token
       user.oauth_expires_at = Time.at(auth.credentials.expires_at)
       user.save!
