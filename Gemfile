@@ -7,7 +7,10 @@ gem 'sass-rails', '~> 4.0.3'
 gem 'sprockets'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
+# Use bootstrap for styling
 gem 'bootstrap-sass', '~> 3.3.3'
+# Use bootswatch template
+gem 'bootswatch-rails', '~> 3.2.4'
 gem 'bcrypt', '~> 3.1.10'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
