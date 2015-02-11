@@ -41,7 +41,7 @@ RSpec.configure do |config|
 
   # Include helper module for sessions
   config.include Features::SessionHelpers, type: :feature
-  # Include helper model for omniauth
+  # Include helper module for omniauth
   config.include Features::OmniAuthMocks, type: :feature
   # Include helper for sessions controller
   config.include SessionsHelper
