@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'static_pages#home'
 
-  resources :users, except: [:index, :show]
+  resources :users
 
   # Standard user sessions
   get 'login' => 'sessions#new'
