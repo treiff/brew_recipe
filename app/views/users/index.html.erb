@@ -1,0 +1,18 @@
+<%= provide(:title, "Browse Users") %>
+
+<h1 class="text-center">Browse Users</h1>
+<div class="center jumbotron">
+
+  <% @users.each do |user| %>
+    <div class="media">
+      <div class="media-left">
+        <%= image_tag(avatar_url(user), class: "img-circle") %>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading"><%= user.username || user.name %></h4>
+        <p>some text here</p>
+      </div>
+    </div>
+  <% end %>
+
+</div>
