@@ -9,6 +9,7 @@ module Features
       fill_in "Password", with: user.password
       fill_in "Password confirmation", with:  user.password_confirmation
     end
+
   end
 
   module OmniAuthMocks

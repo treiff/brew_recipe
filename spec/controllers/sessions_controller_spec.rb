@@ -18,7 +18,6 @@ RSpec.describe SessionsController, :type => :controller do
 
       expect(response).to redirect_to '/'
       expect(flash[:notice]).to match(/^Signed in successfully/)
-      expect(current_user).to eql user
     end
   end
 
