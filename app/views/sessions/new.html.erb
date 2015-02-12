@@ -18,7 +18,8 @@
           <%=f.password_field :password, class: "form-control" %></div>
 
           <div class="form-group"><%=f.submit "Sign in", class: "btn btn-primary" %></div>
-          <%= link_to "login with facebook", "/auth/facebook" %>
+          <%= link_to "login with facebook", "/auth/facebook" %><br />
+          <%= link_to "sign up", new_user_path %>
         <% end %>
       </div>
     </div>

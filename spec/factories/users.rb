@@ -9,7 +9,6 @@ FactoryGirl.define do
   factory :valid_user, class: User do |f|
     f.name "Trevor"
     f.email "trevor@example.com"
-    f.username "trock"
     f.password "myPassword1"
     f.password_confirmation "myPassword1"
   end
