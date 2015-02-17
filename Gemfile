@@ -45,4 +45,6 @@ group :development, :test do
   gem 'guard-rspec', '~>4.5.0', require: false
   # Use factory-girl to generate factories
   gem 'factory_girl_rails', '~>4.5.0'
+  # User rubocop for linting
+  gem 'rubocop', require: false
 end
