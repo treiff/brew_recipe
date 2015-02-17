@@ -1,10 +1,9 @@
 language: ruby
-  rvm:
-    - 2.1.5
-  env:
-    - DB=postgresql
-  script:
-    - "rubocop"
-  before_script:
-    - "rake db:test:prepare"
-
+rvm:
+  - 2.1.5
+env:
+  - DB=postgresql
+script:
+  - "rubocop"
+before_script:
+  - "rake db:test:prepare"
