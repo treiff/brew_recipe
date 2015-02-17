@@ -15,7 +15,7 @@ feature "User signs up" do
   end
 
   scenario "with invalid email" do
-    user = (build(:valid_user, email: "Foo#example.com"))
+    build(:valid_user, email: "Foo#example.com")
     click_button 'Sign up'
 
     expect(page).not_to have_content("Logged in as:")
@@ -23,7 +23,7 @@ feature "User signs up" do
   end
 
   scenario "with incorrent password confirmation" do
-    user = (build(:valid_user, password: "notthesame"))
+    build(:valid_user, password: "notthesame")
     click_button 'Sign up'
 
     expect(page).not_to have_content("Logged in as:")

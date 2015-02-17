@@ -42,14 +42,11 @@ class UsersController < ApplicationController
   end
 
   def logged_in_user
-    unless logged_in?
-      redirect_to login_path
-    end
+    redirect_to login_path unless logged_in?
   end
 
   def matching_user
     @user = User.find(params[:id])
     redirect_to root_path unless @user == current_user
   end
-
 end

@@ -1,3 +1,4 @@
+# Generates user objects
 class User < ActiveRecord::Base
   before_save { self.email = email.downcase }
 
@@ -5,23 +6,21 @@ class User < ActiveRecord::Base
 
   validates :username, length: { maximum: 50 },
                        uniqueness: { case_sensitive: false },
-                       :allow_blank => true
+                       allow_blank: true
   validates :email,    presence: true, length: { maximum: 255 },
                        format: { with: VALID_EMAIL },
                        uniqueness: { case_sensitive: false }
   has_secure_password
   validates :password, length: { minimum: 6 }
 
-
   # Omniauth for facebook login.
-  #
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.provider = auth.provider
       user.uid = auth.uid
       user.name = auth.info.name
       user.username = "blah"
-      user.password = SecureRandom.urlsafe_base64(n=6)
+      user.password = SecureRandom.urlsafe_base64(6)
       user.password_confirmation = user.password
       user.email = auth.info.email
       user.avatar_url = auth.info.image
@@ -30,5 +29,4 @@ class User < ActiveRecord::Base
       user.save!
     end
   end
-
 end

@@ -1,7 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe UsersController, :type => :controller do
-
+RSpec.describe UsersController, type: :controller do
   describe "POST create" do
     context 'with invalid credentials' do
       it 'renders new action' do
@@ -14,13 +13,13 @@ RSpec.describe UsersController, :type => :controller do
 
     context 'with valid credentials' do
       it 'creates user' do
-        user = create(:user)
+        create(:user)
 
-        expect{ post :create, user: attributes_for(:user) }.to change(User, :count).by(1)
+        expect { post :create, user: attributes_for(:user) }.to change(User, :count).by(1)
       end
 
       it 'redirects to root path' do
-        user = create(:user)
+        create(:user)
         post :create, user: attributes_for(:user)
 
         expect(flash[:notice]).to match(/^Welcome to brewblog/)
@@ -43,5 +42,4 @@ RSpec.describe UsersController, :type => :controller do
       expect(response).to render_template :index
     end
   end
-
 end

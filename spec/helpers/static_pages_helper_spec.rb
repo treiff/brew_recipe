@@ -10,5 +10,5 @@ require 'rails_helper'
 #     end
 #   end
 # end
-RSpec.describe StaticPagesHelper, :type => :helper do
+RSpec.describe StaticPagesHelper, type: :helper do
 end
