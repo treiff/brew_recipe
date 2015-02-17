@@ -32,7 +32,6 @@ end
 
 group :test do
   gem 'faker', '~> 1.4.3'
-  gem 'rake', '~> 10.2.2'
 end
 
 group :development, :test do
