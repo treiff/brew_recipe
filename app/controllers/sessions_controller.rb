@@ -6,14 +6,12 @@ class SessionsController < ApplicationController
     if params[:provider] == "facebook"
       user = User.from_omniauth(env["omniauth.auth"])
       log_in(user)
-      flash[:notice] = "Signed in successfully"
-      redirect_to root_path
+      sign_in_message
     else
       user = User.find_by_email(params[:session][:email])
       if user && user.authenticate(params[:session][:password])
         log_in(user)
-        flash[:notice] = "Signed in successfully"
-        redirect_to root_path
+        sign_in_message
       else
         flash.now[:error] = "Username/Password invalid"
         render 'new'
@@ -26,5 +24,4 @@ class SessionsController < ApplicationController
     flash[:notice] = "Signed out successfully"
     redirect_to root_path
   end
-
 end
