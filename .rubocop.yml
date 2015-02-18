@@ -1,9 +1,7 @@
 AllCops:
   Exclude:
-    - 'bin/*'
     - 'db/migrate/*'
     - 'db/schema.rb'
-    - 'Guardfile'
 
 Style/Documentation:
   Exclude:
