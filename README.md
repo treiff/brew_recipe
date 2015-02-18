@@ -1,4 +1,5 @@
 # Brew Blog
+[![Build Status](https://travis-ci.org/treiff/brew-blog.svg?branch=master)](https://travis-ci.org/treiff/brew-blog)
 
 ## What's Brew Blog?
 Brew Blog is a blogging platform for home brewers.  Brewers can create posts, share recipies, create albums..etc.
