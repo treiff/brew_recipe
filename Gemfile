@@ -31,7 +31,7 @@ group :development do
 end
 
 group :test do
-  gem 'faker', '~>1.4.3'
+  gem 'faker', '~> 1.4.3'
 end
 
 group :development, :test do
@@ -45,4 +45,6 @@ group :development, :test do
   gem 'guard-rspec', '~>4.5.0', require: false
   # Use factory-girl to generate factories
   gem 'factory_girl_rails', '~>4.5.0'
+  # User rubocop for linting
+  gem 'rubocop', require: false
 end
