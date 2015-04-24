@@ -5,7 +5,5 @@ feature "User creates brew" do
     login_user
   end
 
-  scenario "with valid input" do
-    expect(page).to have_content("Browse Brews")
-  end
+  scenario "with valid input"
 end
