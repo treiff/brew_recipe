@@ -11,10 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150209210937) do
+ActiveRecord::Schema.define(version: 20150424002347) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "beers", force: true do |t|
+    t.string   "name"
+    t.string   "style"
+    t.text     "description"
+    t.integer  "og"
+    t.integer  "fg"
+    t.integer  "abv"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
+
+  add_index "beers", ["user_id"], name: "index_beers_on_user_id", using: :btree
 
   create_table "posts", force: true do |t|
     t.string   "title"

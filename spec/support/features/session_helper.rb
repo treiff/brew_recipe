@@ -10,6 +10,14 @@ module Features
       fill_in "Password", with: user.password
       fill_in "Password confirmation", with:  user.password_confirmation
     end
+
+    def login_user
+      user = build(:valid_user)
+      visit login_path
+      fill_in "Email", with: user.email
+      fill_in "Password", with: user.password
+      click_button "Sign in"
+    end
   end
 
   # Generates mock Omniauth user
