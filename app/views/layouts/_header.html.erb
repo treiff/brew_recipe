@@ -4,7 +4,7 @@
       <ul class="nav nav-pills">
         <% if current_user %>
           <li><%= link_to "Home", root_path %></li>
-          <li><%= link_to "Browse Brews", users_path %></li>
+          <li><%= link_to "Browse Brews", beers_path %></li>
           <ul class="nav nav-pills pull-right">
             <%= image_tag(avatar_url(current_user), class: "img-circle") %>
             <li class="dropdown">

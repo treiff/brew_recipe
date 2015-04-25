@@ -1,0 +1,17 @@
+<%= provide(:title, "Browse Brews") %>
+
+<h1 class="text-center">Browse Brews</h1>
+<div class="center jumbotron">
+
+  <% @beers.each do |beer| %>
+    <div class="media">
+      <div class="media-left">
+        <%= image_tag(avatar_url(beer.user), class: "img-circle") %>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading"><%= beer.user.username || beer.user.name %></h4>
+        <p>Name: <%= beer.name %> | Style: <%= beer.style %> | OG: <%= beer.og %> | FG: <%= beer.fg %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
