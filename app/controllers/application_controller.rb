@@ -6,6 +6,10 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def logged_in_user
+    redirect_to login_path unless logged_in?
+  end
+
   def oauth_user?
     current_user.provider == "facebook"
   end
