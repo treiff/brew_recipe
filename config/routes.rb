@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'static_pages#home'
 
   resources :users
+  get 'beers' => 'beers#index'
 
   # Standard user sessions
   get 'login' => 'sessions#new'
