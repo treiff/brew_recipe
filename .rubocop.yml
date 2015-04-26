@@ -5,6 +5,7 @@ AllCops:
     - 'vendor/**/*'
     - 'bin/**/*'
     - 'Guardfile'
+    - 'config/environments/*'
 
 Style/Documentation:
   Exclude:

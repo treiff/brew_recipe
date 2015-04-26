@@ -4,7 +4,4 @@ class Beer < ActiveRecord::Base
   validates_attachment_content_type :beer_xml, content_type: 'text/xml'
 
   belongs_to :user
-
-  private
-
 end

@@ -7,7 +7,7 @@ RSpec.describe SessionsController, type: :controller do
       post :create, session: { email: user.email, password: 'invalid' }
 
       expect(response).to render_template(:new)
-      expect(flash.now[:error]).to match(/^Username\/Password invalid/)
+      expect(flash.now[:error]).to match(%r{^Username\/Password invalid})
     end
   end
 

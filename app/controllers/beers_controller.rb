@@ -10,10 +10,11 @@ class BeersController < ApplicationController
   end
 
   def create
-    user = current_user
     beer = current_user.beers.build(beer_params)
     if beer.save
       redirect_to action: 'index'
+    else
+      flash.now[:error] = "unable to save record"
     end
   end
 
