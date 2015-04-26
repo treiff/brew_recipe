@@ -1,0 +1,25 @@
+<h1>new beer</h1>
+<%= form_for @beer, multipart: true do |f| %>
+  <%= f.label :name %>:
+  <%= f.text_field :name %><br />
+
+  <%= f.label :style%>:
+  <%= f.text_field :style %><br />
+
+  <%= f.label :description %>:
+  <%= f.text_field :description %><br />
+
+  <%= f.label :og %>:
+  <%= f.text_field :og %><br />
+
+  <%= f.label :fg %>:
+  <%= f.text_field :fg %><br />
+
+  <%= f.label :abv %>:
+  <%= f.text_field :abv %><br />
+
+  <%= f.label :recipe %>
+  <%= f.file_field :beer_xml %>
+
+  <%= f.submit %>
+<% end %>
