@@ -19,7 +19,7 @@ gem 'omniauth', '~> 1.2.2'
 gem 'omniauth-facebook', '~> 2.0.0'
 # Paperclip for uploads
 gem 'paperclip', '~> 4.2.1'
-gem 'aws-sdk', '~> 2.0.40'
+gem 'aws-sdk', '< 2.0'
 gem 'nokogiri', '~>1.6.6.2'
 
 group :doc do

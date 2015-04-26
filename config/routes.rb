@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   root 'static_pages#home'
 
-  resources :users
-  get 'beers' => 'beers#index'
+  resources :users, except: [:index, :destroy, :show]
+  resources :beers, only: [:new, :create, :index]
 
   # Standard user sessions
   get 'login' => 'sessions#new'
