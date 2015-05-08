@@ -53,7 +53,7 @@ Metrics/LineLength:
   Max: 120
 
 Metrics/AbcSize:
-  Max: 30
+  Max: 35
 
 Lint/UselessAssignment:
   Enabled: true

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150426005202) do
+ActiveRecord::Schema.define(version: 20150508001637) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,11 @@ ActiveRecord::Schema.define(version: 20150426005202) do
     t.string   "beer_xml_content_type"
     t.integer  "beer_xml_file_size"
     t.datetime "beer_xml_updated_at"
+    t.string   "type"
+    t.string   "est_eff"
+    t.string   "style_category"
+    t.string   "srm"
+    t.string   "ibu"
   end
 
   add_index "beers", ["user_id"], name: "index_beers_on_user_id", using: :btree
