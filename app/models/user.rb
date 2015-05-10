@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
       user.provider = auth.provider
       user.uid = auth.uid
       user.name = auth.info.name
-      user.username = "blah"
+      user.username = ""
       user.password = SecureRandom.urlsafe_base64(6)
       user.password_confirmation = user.password
       user.email = auth.info.email
