@@ -72,6 +72,19 @@ GEM
     coffee-script-source (1.9.1.1)
     database_cleaner (1.4.1)
     diff-lcs (1.2.5)
+    elasticsearch (1.0.8)
+      elasticsearch-api (= 1.0.7)
+      elasticsearch-transport (= 1.0.7)
+    elasticsearch-api (1.0.7)
+      multi_json
+    elasticsearch-model (0.1.7)
+      activesupport (> 3)
+      elasticsearch (> 0.4)
+      hashie
+    elasticsearch-rails (0.1.7)
+    elasticsearch-transport (1.0.7)
+      faraday
+      multi_json
     erubis (2.7.0)
     execjs (2.5.2)
     factory_girl (4.5.0)
@@ -261,6 +274,8 @@ DEPENDENCIES
   capybara (~> 2.4.4)
   coffee-rails (~> 4.0.0)
   database_cleaner (~> 1.4.0)
+  elasticsearch-model (~> 0.1.7)
+  elasticsearch-rails (~> 0.1.7)
   factory_girl_rails (~> 4.5.0)
   faker (~> 1.4.3)
   guard-rspec (~> 4.5.0)
