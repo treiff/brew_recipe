@@ -24,6 +24,7 @@ gem 'nokogiri', '~>1.6.6.2'
 # Elastisearch for seaching
 gem 'elasticsearch-model', '~>0.1.7'
 gem 'elasticsearch-rails', '~>0.1.7'
+gem 'chewy', '~>0.7.0'
 
 group :doc do
   gem 'sdoc', '~> 0.4.0'
