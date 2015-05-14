@@ -1,12 +1,25 @@
 # Generates beer objects
 class Beer < ActiveRecord::Base
+  update_index('beers#beer') { self }
+
   self.inheritance_column = :_type_disabled
   has_attached_file :beer_xml, bucket: 'brewrecipes'
   validates_attachment_content_type :beer_xml, content_type: 'text/xml'
 
   before_save :parse_file
-
   belongs_to :user
+
+  def self.search(keyword)
+    keyword.downcase!
+    beer_ids = BeersIndex::Beer.query(
+      multi_match: {
+        query: keyword,
+        type: "phrase_prefix",
+        fields: [:name, :style, :type, :ibu]
+      }
+    ).map { |result| result.attributes["id"] }
+    Beer.find(beer_ids)
+  end
 
   private
 

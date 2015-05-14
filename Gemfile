@@ -21,6 +21,8 @@ gem 'omniauth-facebook', '~> 2.0.0'
 gem 'paperclip', '~> 4.2.1'
 gem 'aws-sdk', '< 2.0'
 gem 'nokogiri', '~>1.6.6.2'
+# Elastisearch/Chewy for seaching
+gem 'chewy', '~>0.7.0'
 
 group :doc do
   gem 'sdoc', '~> 0.4.0'

@@ -2,7 +2,11 @@ class BeersController < ApplicationController
   before_action :logged_in_user, only: [:index]
 
   def index
-    @beers = Beer.all
+    if params[:q].present?
+      @beers = Beer.search(params[:q])
+    else
+      @beers = Beer.all
+    end
   end
 
   def new
