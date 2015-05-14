@@ -6,9 +6,9 @@
 <div class="center">
   <%= form_for search_path, method: :get do |f| %>
     <p>
-      <%= f.label "Search for" %>
-      <%= text_field_tag :q, params[:q] %>
-      <%= submit_tag "Go", name: nil %>
+    <%= f.label "Search for" %>
+    <%= text_field_tag :q, params[:q] %>
+    <%= submit_tag "Go", name: nil %>
     </p>
   <% end %>
 </div>

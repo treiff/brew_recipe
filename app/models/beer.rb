@@ -1,7 +1,6 @@
 # Generates beer objects
 class Beer < ActiveRecord::Base
-  include Elasticsearch::Model
-  include Elasticsearch::Model::Callbacks
+  update_index('beers#beer') { self }
 
   self.inheritance_column = :_type_disabled
   has_attached_file :beer_xml, bucket: 'brewrecipes'
@@ -9,6 +8,18 @@ class Beer < ActiveRecord::Base
 
   before_save :parse_file
   belongs_to :user
+
+  def self.search(keyword)
+    keyword.downcase!
+    beer_ids = BeersIndex::Beer.query(
+      multi_match: {
+        query: keyword,
+        type: "phrase_prefix",
+        fields: [:name, :style, :type, :ibu]
+      }
+    ).map { |result| result.attributes["id"] }
+    self.find(beer_ids)
+  end
 
   private
 
@@ -33,4 +44,3 @@ class Beer < ActiveRecord::Base
     end
   end
 end
-Beer.import
