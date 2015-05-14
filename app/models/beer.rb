@@ -18,7 +18,7 @@ class Beer < ActiveRecord::Base
         fields: [:name, :style, :type, :ibu]
       }
     ).map { |result| result.attributes["id"] }
-    self.find(beer_ids)
+    Beer.find(beer_ids)
   end
 
   private
