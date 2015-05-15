@@ -23,6 +23,8 @@ gem 'aws-sdk', '< 2.0'
 gem 'nokogiri', '~>1.6.6.2'
 # Elastisearch/Chewy for seaching
 gem 'chewy', '~>0.7.0'
+# Passenger for web server
+gem 'passenger', '~>5.0.7'
 
 group :doc do
   gem 'sdoc', '~> 0.4.0'
