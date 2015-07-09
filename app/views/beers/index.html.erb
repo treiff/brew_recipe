@@ -23,7 +23,7 @@
         <h4 class="media-heading"><%= beer.user.username || beer.user.name %></h4>
         <p>Name: <%= beer.name %> | Style: <%= beer.style %> | OG: <%= beer.og %> | FG: <%= beer.fg %></p>
         <% if logged_in? && beer.beer_xml_file_name %>
-          <p><%= link_to("download recipe", beer.beer_xml.url) %></p>
+          <p><%= link_to("download recipe", download_path(beer)) %></p>
         <% end %>
       </div>
     </div>

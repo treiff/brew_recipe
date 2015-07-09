@@ -1,5 +1,5 @@
 class BeersController < ApplicationController
-  #  before_action :logged_in_user, only: [:index]
+  before_action :logged_in_user, only: [:download]
 
   def index
     if params[:q].present?
@@ -20,6 +20,12 @@ class BeersController < ApplicationController
     else
       flash.now[:error] = "unable to save record"
     end
+  end
+
+  def download
+    beer = Beer.find(params[:format])
+    data = open(beer.beer_xml.url)
+    send_data data.read, filename: "recipe.xml", type: "text/xml", disposition: 'attachment', stream: 'true', buffer_size: '4096'
   end
 
   private

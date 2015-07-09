@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'static_pages#home'
 
   get 'search', to: 'beers#index'
+  get 'download', to: 'beers#download'
 
   resources :users, except: [:index, :destroy, :show]
   resources :beers, only: [:new, :create, :index]
