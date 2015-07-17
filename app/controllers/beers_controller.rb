@@ -1,5 +1,5 @@
 class BeersController < ApplicationController
-  before_action :logged_in_user, only: [:download]
+  before_action :logged_in_user, only: [:download, :upvote, :downvote]
 
   def index
     if params[:q].present?
