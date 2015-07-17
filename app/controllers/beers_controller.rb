@@ -29,6 +29,18 @@ class BeersController < ApplicationController
                          stream: 'true', buffer_size: '4096'
   end
 
+  def upvote
+    beer = Beer.find(params[:id])
+    beer.upvote
+    redirect_to :back
+  end
+
+  def downvote
+    beer = Beer.find(params[:id])
+    beer.downvote
+    redirect_to :back
+  end
+
   private
 
   def beer_params

@@ -17,6 +17,9 @@
   <% @beers.each do |beer| %>
     <div class="media">
       <div class="media-left">
+        <%= link_to "Up", upvote_path(beer), class: "glyphicon glyphicon-chevron-up" %>
+        <span class="badge"><%= beer.vote_count %></span>
+        <%= link_to "Down", downvote_path(beer), class: "glyphicon glyphicon-chevron-down" %>
         <%= image_tag(avatar_url(beer.user), class: "img-circle") %>
       </div>
       <div class="media-body">
