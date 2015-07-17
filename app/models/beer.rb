@@ -9,6 +9,7 @@ class Beer < ActiveRecord::Base
   before_save :parse_file
   belongs_to :user
 
+
   def self.search(keyword)
     keyword.downcase!
     beer_ids = BeersIndex::Beer.query(
@@ -19,6 +20,14 @@ class Beer < ActiveRecord::Base
       }
     ).map { |result| result.attributes["id"] }
     Beer.find(beer_ids)
+  end
+
+  def upvote
+    increment!(:vote_count, by = 1)
+  end
+
+  def downvote
+    decrement!(:vote_count, by = 1)
   end
 
   private
