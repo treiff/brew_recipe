@@ -29,23 +29,6 @@ class BeersController < ApplicationController
                          stream: 'true', buffer_size: '4096'
   end
 
-  def upvote
-    beer = Beer.find(params[:id])
-    vote = Vote.where(beer_id: beer).first_or_create
-    vote.upvote(beer)
-    redirect_to :back
-  end
-
-  def downvote
-    beer = Beer.find(params[:id])
-    beer.downvote
-    redirect_to :back
-  end
-
-  def self.vote_count
-    Vote.find_by_beer_id(self).count
-  end
-
   private
 
   def beer_params

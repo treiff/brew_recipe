@@ -6,7 +6,7 @@ class Beer < ActiveRecord::Base
   has_attached_file :beer_xml, bucket: 'brewrecipes'
   validates_attachment_content_type :beer_xml, content_type: 'text/xml'
 
-  default_scope { order('vote_count DESC') }
+  # default_scope { order('vote_count DESC') }
 
   before_save :parse_file
   belongs_to :user
@@ -22,6 +22,18 @@ class Beer < ActiveRecord::Base
       }
     ).map { |result| result.attributes["id"] }
     Beer.find(beer_ids)
+  end
+
+  def upvote
+    self.votes.where(value: 1).count
+  end
+
+  def downvote
+    self.votes.where(value: -1).count
+  end
+
+  def total_votes
+    self.votes.sum(:value).to_i
   end
 
   private

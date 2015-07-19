@@ -3,11 +3,12 @@ Rails.application.routes.draw do
 
   get 'search', to: 'beers#index'
   get 'download', to: 'beers#download'
-  get 'upvote/:id', to: 'beers#upvote', as: 'upvote'
-  get 'downvote/:id', to: 'beers#downvote', as: 'downvote'
 
   resources :users, except: [:index, :destroy, :show]
-  resources :beers, only: [:new, :create, :index]
+  resources :beers, only: [:new, :create, :index] do
+    get 'upvote', to: 'votes#upvote', as: 'upvote'
+    get 'downvote', to: 'votes#downvote', as: 'downvote'
+  end
 
   # Standard user sessions
   get 'login' => 'sessions#new'

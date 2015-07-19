@@ -16,11 +16,11 @@
 <div class="center jumbotron">
   <% @beers.each do |beer| %>
     <div class="media">
-    <span class="badge"><%= beer.vote_count %></span>
+    <span class="badge"><%= beer.total_votes %></span>
       <div class="media-left">
         <% if current_user %>
-          <%= link_to "Up", upvote_path(beer), class: "glyphicon glyphicon-chevron-up" %>
-          <%= link_to "Down", downvote_path(beer), class: "glyphicon glyphicon-chevron-down" %>
+          <%= link_to "Up", beer_upvote_path(beer.id), class: "glyphicon glyphicon-chevron-up" %>
+          <%= link_to "Down", beer_downvote_path(beer.id), class: "glyphicon glyphicon-chevron-down" %>
         <% end %>
         <%= image_tag(avatar_url(beer.user), class: "img-circle") %>
       </div>
