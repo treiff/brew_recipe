@@ -10,6 +10,7 @@ class Beer < ActiveRecord::Base
 
   before_save :parse_file
   belongs_to :user
+  has_many :votes, dependent: :destroy
 
   def self.search(keyword)
     keyword.downcase!
@@ -21,14 +22,6 @@ class Beer < ActiveRecord::Base
       }
     ).map { |result| result.attributes["id"] }
     Beer.find(beer_ids)
-  end
-
-  def upvote
-    increment!(:vote_count)
-  end
-
-  def downvote
-    decrement!(:vote_count)
   end
 
   private

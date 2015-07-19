@@ -31,7 +31,8 @@ class BeersController < ApplicationController
 
   def upvote
     beer = Beer.find(params[:id])
-    beer.upvote
+    vote = Vote.where(beer_id: beer).first_or_create
+    vote.upvote(beer)
     redirect_to :back
   end
 
@@ -39,6 +40,10 @@ class BeersController < ApplicationController
     beer = Beer.find(params[:id])
     beer.downvote
     redirect_to :back
+  end
+
+  def self.vote_count
+    Vote.find_by_beer_id(self).count
   end
 
   private

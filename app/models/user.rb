@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6 }
 
   has_many :beers
+  has_many :votes, dependent: :destroy
 
   # Omniauth for facebook login.
   def self.from_omniauth(auth)
