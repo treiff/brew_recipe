@@ -25,15 +25,15 @@ class Beer < ActiveRecord::Base
   end
 
   def upvote
-    self.votes.where(value: 1).count
+    votes.where(value: 1).count
   end
 
   def downvote
-    self.votes.where(value: -1).count
+    votes.where(value: -1).count
   end
 
   def total_votes
-    self.votes.sum(:value).to_i
+    votes.sum(:value).to_i
   end
 
   private
