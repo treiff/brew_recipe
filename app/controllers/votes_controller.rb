@@ -20,8 +20,4 @@ class VotesController < ApplicationController
     end
     redirect_to :back
   end
-
-  def self.vote_count
-    Vote.find_by_beer_id(self).count
-  end
 end
