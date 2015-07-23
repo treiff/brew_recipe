@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.2.2'
+
 gem 'rails', '4.1.8'
 gem 'pg'
 gem 'sass-rails', '~> 4.0.3'
@@ -40,6 +42,10 @@ end
 
 group :test do
   gem 'faker', '~> 1.4.3'
+end
+
+group :production do
+  gem 'rails_12factor'
 end
 
 group :development, :test do
