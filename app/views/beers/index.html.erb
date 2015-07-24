@@ -16,16 +16,18 @@
 <div class="center jumbotron">
   <% @beers.each do |beer| %>
     <div class="media">
-    <span class="badge"><%= beer.total_votes %></span>
-      <div class="media-left">
+      <div class="media-left media-middle">
         <% if current_user %>
           <%= link_to "Up", beer_upvote_path(beer.id), class: "glyphicon glyphicon-chevron-up" %>
+          <span class="badge"><%= beer.total_votes %></span>
           <%= link_to "Down", beer_downvote_path(beer.id), class: "glyphicon glyphicon-chevron-down" %>
         <% end %>
-        <%= image_tag(avatar_url(beer.user), class: "img-circle") %>
       </div>
       <div class="media-body">
-        <h4 class="media-heading"><%= beer.user.username || beer.user.name %></h4>
+        <h4 class="media-heading">
+          <%= beer.user.username || beer.user.name %>
+          <%= image_tag(avatar_url(beer.user), class: "img-circle") %>
+        </h4>
         <p>Name: <%= beer.name %> | Style: <%= beer.style %> | OG: <%= beer.og %> | FG: <%= beer.fg %></p>
         <% if logged_in? && beer.beer_xml_file_name %>
           <p><%= link_to("download recipe", download_path(beer)) %></p>
