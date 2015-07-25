@@ -18,9 +18,9 @@
     <div class="media">
       <div class="media-left media-middle">
         <% if current_user %>
-          <%= link_to "Up", beer_upvote_path(beer.id), class: "glyphicon glyphicon-chevron-up" %>
+          <%= link_to "", beer_upvote_path(beer.id), class: "glyphicon glyphicon-chevron-up" %>
           <span class="badge"><%= beer.total_votes %></span>
-          <%= link_to "Down", beer_downvote_path(beer.id), class: "glyphicon glyphicon-chevron-down" %>
+          <%= link_to "", beer_downvote_path(beer.id), class: "glyphicon glyphicon-chevron-down" %>
         <% end %>
       </div>
       <div class="media-body">
@@ -30,7 +30,7 @@
         </h4>
         <p>Name: <%= beer.name %> | Style: <%= beer.style %> | OG: <%= beer.og %> | FG: <%= beer.fg %></p>
         <% if logged_in? && beer.beer_xml_file_name %>
-          <p><%= link_to("download recipe", download_path(beer)) %></p>
+          <p><%= link_to("download", download_path(beer)) %></p>
         <% end %>
       </div>
     </div>
