@@ -4,25 +4,39 @@
 <h1 class="text-center">Browse Brews</h1>
 <div class="center jumbotron">
   <%= render partial: "search" %>
-  <% @beers.each do |beer| %>
-    <div class="media">
-      <div class="media-left media-middle">
-        <% if current_user %>
-          <%= link_to "", beer_upvote_path(beer.id), class: "glyphicon glyphicon-chevron-up" %>
-          <span class="badge"><%= beer.total_votes %></span>
-          <%= link_to "", beer_downvote_path(beer.id), class: "glyphicon glyphicon-chevron-down" %>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th></th>
+          <th></th>
+          <th>Beer Name</th>
+          <th>Style</th>
+          <th>OG</th>
+          <th>FG</th>
+          <th>Download</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @beers.each do |beer| %>
+          <tr>
+            <% if current_user %>
+              <td><%= link_to "", beer_upvote_path(beer.id), class: "glyphicon glyphicon-chevron-up" %>
+                  <span class="badge"><%= beer.total_votes %></span>
+                  <%= link_to "", beer_downvote_path(beer.id), class: "glyphicon glyphicon-chevron-down" %>
+              </td>
+            <% end %>
+            <%#= beer.user.username || beer.user.name %>
+            <td>
+              <%= image_tag(avatar_url(beer.user), class: "img-circle") %>
+            </td>
+            <td><%= beer.name %></td>
+            <td><%= beer.style %></td>
+            <td><%= beer.og %></td>
+            <td><%= beer.fg %></td>
+            <% if logged_in? && beer.beer_xml_file_name %>
+              <td><%= link_to(image_tag("xml.png"), download_path(beer)) %></td>
+            <% end %>
         <% end %>
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading">
-          <%= beer.user.username || beer.user.name %>
-          <%= image_tag(avatar_url(beer.user), class: "img-circle") %>
-        </h4>
-        <p>Name: <%= beer.name %> | Style: <%= beer.style %> | OG: <%= beer.og %> | FG: <%= beer.fg %></p>
-        <% if logged_in? && beer.beer_xml_file_name %>
-          <p><%= link_to("download", download_path(beer)) %></p>
-        <% end %>
-      </div>
-    </div>
-  <% end %>
+      </tbody>
+    </table>
 </div>
