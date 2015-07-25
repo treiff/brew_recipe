@@ -12,6 +12,7 @@
  *
  */
 @import "bootswatch/yeti/variables";
+@import "bootstrap-sprockets";
 @import "bootstrap";
 @import "bootswatch/yeti/bootswatch";
 
@@ -19,4 +20,12 @@
   border-radius: 10px;
   height: 35px;
   margin-top: 5px;
+}
+
+.media-left {
+  padding-right: 20px;
+}
+
+.form-control {
+  margin-bottom: 30px;
 }
