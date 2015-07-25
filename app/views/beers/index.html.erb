@@ -2,18 +2,8 @@
 
 <%= provide(:title, "Browse Brews") %>
 <h1 class="text-center">Browse Brews</h1>
-
-<div class="center">
-  <%= form_for search_path, method: :get do |f| %>
-    <p>
-    <%= f.label "Search for" %>
-    <%= text_field_tag :q, params[:q] %>
-    <%= submit_tag "Go", name: nil %>
-    </p>
-  <% end %>
-</div>
-
 <div class="center jumbotron">
+  <%= render partial: "search" %>
   <% @beers.each do |beer| %>
     <div class="media">
       <div class="media-left media-middle">
