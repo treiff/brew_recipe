@@ -1,4 +1,6 @@
 class VotesController < ApplicationController
+  before_action :logged_in_user
+
   def upvote
     @beer = Beer.find(params[:beer_id])
     @vote = @beer.votes.where(user_id: current_user.id).first
@@ -19,5 +21,14 @@ class VotesController < ApplicationController
       @vote = current_user.votes.create(value: -1, beer_id: @beer.id)
     end
     redirect_to :back
+  end
+
+  private
+
+  def logged_in_user
+    unless logged_in?
+      flash.now[:danger] = "Please login to vote"
+      redirect_to root_path
+    end
   end
 end

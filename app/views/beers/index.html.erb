@@ -13,18 +13,18 @@
           <th>Style</th>
           <th>OG</th>
           <th>FG</th>
-          <th>Download</th>
+          <% if logged_in? %>
+            <th>Download</th>
+          <% end %>
         </tr>
       </thead>
       <tbody>
         <% @beers.each do |beer| %>
           <tr>
-            <% if current_user %>
-              <td><%= link_to "", beer_upvote_path(beer.id), class: "glyphicon glyphicon-chevron-up" %>
-                  <span class="badge"><%= beer.total_votes %></span>
-                  <%= link_to "", beer_downvote_path(beer.id), class: "glyphicon glyphicon-chevron-down" %>
-              </td>
-            <% end %>
+            <td><%= link_to "", beer_upvote_path(beer.id), class: "glyphicon glyphicon-chevron-up" %>
+                <span class="badge"><%= beer.total_votes %></span>
+                <%= link_to "", beer_downvote_path(beer.id), class: "glyphicon glyphicon-chevron-down" %>
+            </td>
             <%#= beer.user.username || beer.user.name %>
             <td>
               <%= image_tag(avatar_url(beer.user), class: "img-circle") %>
