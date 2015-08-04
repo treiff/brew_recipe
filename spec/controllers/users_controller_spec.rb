@@ -22,7 +22,7 @@ RSpec.describe UsersController, type: :controller do
         create(:user)
         post :create, user: attributes_for(:user)
 
-        expect(flash[:notice]).to match(/^Welcome to brewblog/)
+        expect(flash[:notice]).to match(/^Welcome to brew recipe/)
         expect(response).to redirect_to root_path
       end
     end

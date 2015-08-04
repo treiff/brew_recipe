@@ -1,5 +1,6 @@
 # Generates beer objects
 class Beer < ActiveRecord::Base
+  # Chewy search
   update_index('beers#beer') { self }
 
   self.inheritance_column = :_type_disabled

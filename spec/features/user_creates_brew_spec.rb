@@ -6,4 +6,5 @@ feature "User creates brew" do
   end
 
   scenario "with valid input"
+  scenario 'with invalid input'
 end
