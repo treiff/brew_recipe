@@ -1,7 +1,9 @@
 <%= javascript_include_tag "xml_parser" %>
 
 <%= provide(:title, "Browse Brews") %>
+<%= render 'layouts/flash' %>
 <h1 class="text-center">Browse Brews</h1>
+
 <div class="center jumbotron">
   <%= render partial: "search" %>
     <table class="table table-hover">

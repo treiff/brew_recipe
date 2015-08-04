@@ -26,9 +26,8 @@ class VotesController < ApplicationController
   private
 
   def logged_in_user
-    unless logged_in?
-      flash.now[:danger] = "Please login to vote"
-      redirect_to root_path
-    end
+    return true if logged_in?
+    flash[:danger] = "Please login to vote"
+    redirect_to beers_path
   end
 end
