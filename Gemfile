@@ -39,6 +39,7 @@ group :development do
   gem 'quiet_assets', '~> 1.1.0'
   # Use better errors for debugging
   gem 'better_errors', '~> 2.1.1'
+  gem 'binding_of_caller'
 end
 
 group :test do
