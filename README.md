@@ -1,17 +1,16 @@
-# Brew Blog
-[![Build Status](https://travis-ci.org/treiff/brew-blog.svg?branch=master)](https://travis-ci.org/treiff/brew-blog)
+# Brew Recipe
+[![Build Status](https://travis-ci.org/treiff/brew-recipe.svg?branch=master)](https://travis-ci.org/treiff/brew-recipe)
 
-## What's Brew Blog?
-Brew Blog is a blogging platform for home brewers.  Brewers can create posts, share recipies, create albums..etc.
+## What's Brew Recipe?
+Brew Recipe is a recipe platform for home brewers.  Brewers can import .xml files, rank recipies and other awesome
+stuff that's in progress.
 
 ### Features (WIP)
-* Create blog-posts.
-* Categorize posts.
-* Upload recipies.
-* Direct message other brewers.
-* Upload photos.
-* Comment on posts/photos/recipies.
-* See what "friends" are up to.
-* Messaging system to setup team brews.
+- [x] Create recipes from parsed .xml upload.
+- [x] Up/Down vote recipes.
+- [ ] Direct message other brewers.
+- [ ] Upload photos.
+- [ ] Comment on recipies.
+- [ ] See what "friends" are up to.
 
 Any questions/comments let me know [@tlreiff](https://twitter.com/tlreiff)
