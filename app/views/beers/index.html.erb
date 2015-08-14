@@ -23,9 +23,9 @@
       <tbody>
         <% @beers.each do |beer| %>
           <tr>
-            <td><%= link_to "", beer_upvote_path(beer.id), class: "glyphicon glyphicon-chevron-up" id: "chev-up" %>
+            <td><%= link_to "", beer_upvote_path(beer.id), class: "glyphicon glyphicon-chevron-up", id: "chev-up" %>
                 <span class="badge"><%= beer.total_votes %></span>
-                <%= link_to "", beer_downvote_path(beer.id), class: "glyphicon glyphicon-chevron-down" id: "chev-down" %>
+                <%= link_to "", beer_downvote_path(beer.id), class: "glyphicon glyphicon-chevron-down", id: "chev-down" %>
             </td>
             <%#= beer.user.username || beer.user.name %>
             <td>
