@@ -1,5 +1,7 @@
 # Generates beer objects
 class Beer < ActiveRecord::Base
+  include ScrapeRecipe
+
   # Chewy search
   update_index('beers#beer') { self }
 
@@ -37,6 +39,10 @@ class Beer < ActiveRecord::Base
     votes.sum(:value).to_i
   end
 
+  def html_doc(url)
+    get_page(url)
+  end
+
   private
 
   def parse_file
@@ -59,4 +65,5 @@ class Beer < ActiveRecord::Base
       self.abv = node.at_xpath("EST_ABV").content
     end
   end
+
 end
