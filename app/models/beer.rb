@@ -65,5 +65,4 @@ class Beer < ActiveRecord::Base
       self.abv = node.at_xpath("EST_ABV").content
     end
   end
-
 end
