@@ -2,11 +2,8 @@ class BeersController < ApplicationController
   before_action :logged_in_user, only: [:download, :upvote, :downvote]
 
   def index
-    if params[:q].present?
-      @beers = Beer.search(params[:q])
-    else
-      @beers = Beer.all
-    end
+    return @beers = Beer.search(params[:q]) if params[:q].present?
+    @beers = Beer.all
   end
 
   def new
