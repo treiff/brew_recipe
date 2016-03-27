@@ -10,24 +10,24 @@ feature 'User edits profile' do
   end
 
   scenario "with valid credentials" do
-    visit(edit_user_path(@user))
+    visit(edit_user_path(@user.id))
     fill_in "Username", with: "beerBelly"
     fill_in "Password", with: @user.password
     fill_in "Password confirmation", with: @user.password
     click_button "Save changes"
 
     expect(page).to have_css(".alert-success")
-    expect(User.find(@user).username).to eql("beerBelly")
+    expect(User.find(@user.id).username).to eql("beerBelly")
   end
 
   scenario "with invalid credentials" do
-    visit(edit_user_path(@user))
+    visit(edit_user_path(@user.id))
     fill_in "Email", with: "bogus.#com"
     fill_in "Password", with: @user.password
     fill_in "Password confirmation", with: @user.password
     click_button "Save changes"
 
     expect(page).to have_css(".alert-danger")
-    expect(User.find(@user).email).to eql @user.email
+    expect(User.find(@user.id).email).to eql @user.email
   end
 end
