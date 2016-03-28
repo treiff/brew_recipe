@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20150720001126) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "beers", force: true do |t|
+  create_table "beers", force: :cascade do |t|
     t.string   "name"
     t.string   "style"
     t.text     "description"
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20150720001126) do
 
   add_index "beers", ["user_id"], name: "index_beers_on_user_id", using: :btree
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "username"
     t.string   "email"
     t.datetime "created_at"
@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 20150720001126) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
-  create_table "votes", force: true do |t|
+  create_table "votes", force: :cascade do |t|
     t.integer  "value",      default: 0
     t.integer  "user_id"
     t.integer  "beer_id"
