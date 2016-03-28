@@ -21,3 +21,4 @@
 Guardfile
 # Ignore AWS config.yml
 /config/local_env.yml
+/config/application.yml

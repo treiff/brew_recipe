@@ -20,6 +20,7 @@ gem 'aws-sdk', '< 2.0'
 gem 'nokogiri', '~> 1.6.7.0'
 gem 'chewy', '~> 0.7.0'
 gem 'passenger', '~> 5.0.0'
+gem 'figaro', '~> 1.1.0'
 
 group :doc do
   gem 'sdoc', '~> 0.4.0'
