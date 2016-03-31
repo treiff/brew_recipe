@@ -1,0 +1,20 @@
+- if flash[:notice]
+  %div.alert.alert-success.alert-dismissible{ role: 'alert' }
+    %button.close{ data: { dismiss: 'alert' }, aria: { label: 'Close'} }
+      %span{ aria: { hidden: 'true' } }
+        &times;
+    = flash[:notice]
+
+- elsif flash[:error]
+  %div.alert.alert-danger.alert-dismissible{ role: 'alert' }
+    %button.close{ data: { dismiss: 'alert' }, aria: { label: 'Close' } }
+      %span{ aria: { hidden: 'true' } }
+        &times;
+    = flash[:error]
+
+- elsif flash[:danger]
+  %div.alert.alert-danger.alert-dismissible{ role: 'alert' }
+    %button.close{ data: { dismiss: 'alert' }, aria: { label: 'Close' } }
+      %span{ aria: { hidden: 'true' } }
+        &times;
+    = flash[:danger]
