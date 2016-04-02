@@ -1,0 +1,29 @@
+= provide(:title, 'Edit user')
+
+.center.jumbotron
+  = form_for :user, url: user_path(@user), method: :patch do |f|
+    = render 'shared/error_messages'
+
+    .form-group
+      = f.label :name
+      = f.text_field :name, class: "form-control"
+
+    .form-group
+      = f.label :email
+      = f.text_field :email, class: "form-control"
+
+    .form-group
+      = f.label :username
+      = f.text_field :username, class: "form-control"
+
+    .form-group
+      = f.label :password
+      = f.password_field :password, class: "form-control"
+
+    .form-group
+      = f.label :password_confirmation
+      = f.password_field :password_confirmation, class: "form-control"
+
+    .form-group
+      = f.submit 'Save changes', class: 'btn btn-primary'
+    = link_to "Cancel", root_path

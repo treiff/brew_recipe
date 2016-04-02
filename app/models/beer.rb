@@ -7,8 +7,7 @@ class Beer < ActiveRecord::Base
 
   self.inheritance_column = :_type_disabled
   has_attached_file :beer_xml,
-                     bucket: 'brewxmlrecipes'
-
+                    bucket: 'brewxmlrecipes'
 
   validates_attachment_content_type :beer_xml, content_type: 'text/xml'
 
