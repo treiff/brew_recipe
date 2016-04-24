@@ -4,6 +4,7 @@ ruby '2.2.3'
 # comment
 
 gem 'rails', '5.0.0.beta3'
+gem 'active_model_serializers'
 gem 'pg'
 gem 'sass-rails', '~> 5.0.0'
 gem 'sprockets'

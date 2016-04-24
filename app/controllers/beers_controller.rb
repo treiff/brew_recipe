@@ -4,6 +4,11 @@ class BeersController < ApplicationController
   def index
     return @beers = Beer.search(params[:q]) if params[:q].present?
     @beers = Beer.all
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @beers }
+    end
   end
 
   def new
