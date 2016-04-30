@@ -29,3 +29,21 @@
 .form-control {
   margin-bottom: 30px;
 }
+
+.example-enter {
+  background: yellow;
+  transition: background 1s ease-in;
+}
+
+.example-enter.example-enter-active {
+  background: white;
+}
+
+.example-leave {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+}

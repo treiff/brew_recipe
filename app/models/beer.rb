@@ -2,16 +2,12 @@
 class Beer < ActiveRecord::Base
   include ScrapeRecipe
 
-  # Chewy search
-  update_index('beers#beer') { self }
-
   self.inheritance_column = :_type_disabled
+
   has_attached_file :beer_xml,
                     bucket: 'brewxmlrecipes'
 
   validates_attachment_content_type :beer_xml, content_type: 'text/xml'
-
-  # default_scope { order('vote_count DESC') }
 
   before_save :parse_file
   belongs_to :user

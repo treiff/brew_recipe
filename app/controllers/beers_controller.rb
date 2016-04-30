@@ -2,8 +2,12 @@ class BeersController < ApplicationController
   before_action :logged_in_user, only: [:download, :upvote, :downvote]
 
   def index
-    return @beers = Beer.search(params[:q]) if params[:q].present?
     @beers = Beer.all
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @beers }
+    end
   end
 
   def new
