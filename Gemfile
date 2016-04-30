@@ -23,6 +23,7 @@ gem 'nokogiri', '~> 1.6.7.0'
 gem 'passenger', '~> 5.0.0'
 gem 'figaro', '~> 1.1.0'
 gem 'haml'
+gem 'coffee-rails'
 
 group :doc do
   gem 'sdoc', '~> 0.4.0'
