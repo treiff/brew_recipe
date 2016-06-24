@@ -1,0 +1,42 @@
+= provide(:title, 'Sign up')
+.center.jumbotron
+  .row
+    .col-md-6
+      .panel.panel-default
+        .panel-heading.text-center
+          %h2
+            Sign Up
+        .panel-body
+          = form_for @user do |f|
+            = render 'shared/error_messages'
+
+            .form-group
+              =f.label :name
+              =f.text_field :name, class: "form-control"
+
+            .form-group
+              =f.label :email
+              =f.text_field :email, class: "form-control"
+
+            .form-group
+              =f.label :username
+              =f.text_field :username, class: "form-control"
+
+            .form-group
+              =f.label :password
+              =f.password_field :password, class: "form-control"
+
+            .form-group
+              =f.label :password_confirmation
+              =f.password_field :password_confirmation, class: "form-control"
+
+            .form-group
+              = f.submit "Sign up", class: "btn btn-primary"
+
+    .col-md-6
+      .panel.panel-default
+        .panel-heading.text-center
+          %h2
+            or login with:
+        .panel-body.text-center
+          = link_to image_tag("login_with_facebook.png"), "/auth/facebook"

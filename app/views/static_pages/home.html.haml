@@ -1,0 +1,10 @@
+= provide(:title, "Home")
+
+= render 'layouts/flash'
+
+.center.jumbotron
+  %h1 Brew Recipe
+  %p more to come
+
+  - unless logged_in?
+    = link_to "Sign up", new_user_path, class: "btn btn-lg btn-primary"

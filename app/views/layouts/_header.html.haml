@@ -1,0 +1,33 @@
+%header.navbar.navbar-default
+  .container
+    %nav
+      %ul.nav.nav-pills
+        - if current_user
+          %li= link_to "Home", root_path
+          %li= link_to "Browse Brews", beers_path
+          %li= link_to "New Brew", new_beer_path
+
+          %ul.nav.nav-pills.pull-right
+            = image_tag(avatar_url(current_user), class: "img-circle")
+            %li.dropdown
+              - if current_user.name.empty?
+                %a.dropdown-toggle{ href: '#', data: { toggle: 'dropdown' }, role: 'button',  aria: { expanded: 'false' } }
+                  Logged in as:
+                  %strong= current_user.email
+                  %span.caret
+              - else
+                %a.dropdown-toggle{ href: '#', data: { toggle: 'dropdown' }, role: 'button',  aria: { expanded: 'false' } }
+                  Logged in as:
+                  %strong= current_user.name
+                  %span.caret
+
+              %ul.dropdown-menu
+                - unless oauth_user?
+                  %li= link_to "Account settings", edit_user_path(current_user)
+                %li.divider
+                  %li= link_to "Sign out", signout_path, id: "sign_out"
+
+        - else
+          %li= link_to "Home", root_path
+          %li= link_to "Browse Brews", beers_path
+          %li= link_to "Log in", login_path

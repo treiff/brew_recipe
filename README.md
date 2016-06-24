@@ -1,24 +1,16 @@
-# README
+# Brew Recipe
+[![Build Status](https://travis-ci.org/treiff/brew_recipe.svg?branch=master)](https://travis-ci.org/treiff/brew_recipe)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## What's Brew Recipe?
+Brew Recipe is a recipe platform for home brewers.  Brewers can import .xml files, rank recipies and other awesome
+stuff that's in progress.
 
-Things you may want to cover:
+### Features (WIP)
+- [x] Create recipes from parsed .xml upload.
+- [x] Up/Down vote recipes.
+- [ ] Direct message other brewers.
+- [ ] Upload photos.
+- [ ] Comment on recipies.
+- [ ] See what "friends" are up to.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Any questions/comments let me know [@tlreiff](https://twitter.com/tlreiff)
