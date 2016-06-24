@@ -1,0 +1,15 @@
+= provide(:title, "Browse Users")
+
+%h1.text-center
+  Browse Users
+
+.center.jumbotron
+  - @users.each do |user|
+    .media
+      .media-left
+        = image_tag(avatar_url(user), class: "img-circle")
+      .media-body
+        %h4.media-heading
+          = user.username || user.name
+        %p
+         some text here

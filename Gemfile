@@ -26,15 +26,18 @@ gem 'haml'
 # gem 'redis', '~> 3.0'
 
 group :test do
+  gem 'faker', '~> 1.4.3'
+end
+
+group :development, :test do
   gem 'rspec-rails', '3.5.0.beta2'
   gem 'capybara', '~> 2.6.0'
   gem 'database_cleaner', '~> 1.4.0'
   gem 'factory_girl_rails', '~> 4.6.0'
-  gem 'faker', '~> 1.4.3'
+  gem 'rubocop', require: false
 end
 
 group :development do
-  gem 'rubocop', require: false
   gem 'byebug', platform: :mri
   gem 'web-console'
   gem 'binding_of_caller'
