@@ -1,0 +1,3 @@
+= form_for search_path, method: :get do |f|
+  %p
+  = text_field_tag :q, params[:q], placeholder: "Beer Search", class: "form-control"

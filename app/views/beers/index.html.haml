@@ -1,0 +1,36 @@
+=# javascript_include_tag "xml_parser"
+= provide(:title, "Browse Brews")
+= render 'layouts/flash'
+
+%h1.text-center
+  Browse Brews
+
+.center.jumbotron
+  /= render 'search'
+  = react_component('FilterableRecipeTable', {loggedIn: logged_in? })
+  /%table.table.table-hover
+  /  %thead
+  /    %tr
+  /      %th
+  /      %th
+  /      %th Beer Name
+  /      %th Style
+  /      %th OG
+  /      %th FG
+  /      - if logged_in?
+  /        %th Download 
+  /  %tbody
+  /    - @beers.each do |beer|
+  /      %tr
+  /        %td
+  /          = link_to "", beer_upvote_path(beer.id), class: "glyphicon glyphicon-chevron-up", id: "chev-up"
+  /          %span.badge
+  /            = beer.total_votes
+  /          = link_to "", beer_downvote_path(beer.id), class: "glyphicon glyphicon-chevron-down", id: "chev-down" 
+  /        %td= image_tag(avatar_url(beer.user), class: "img-circle") 
+  /        %td= beer.name
+  /        %td= beer.style
+  /        %td= beer.og
+  /        %td= beer.fg
+  /        - if logged_in? && beer.beer_xml_file_name.present?
+  /          %td= link_to(image_tag("xml.png"), beer.beer_xml.url, target: '_blank')
