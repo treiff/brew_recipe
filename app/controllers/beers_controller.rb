@@ -24,7 +24,6 @@ class BeersController < ApplicationController
   end
 
   def download
-    # test commit
     beer = Beer.find(params[:format])
     data = open(beer.beer_xml.url)
     send_data data.read, filename: "recipe.xml", type: "text/xml", disposition: 'attachment',
