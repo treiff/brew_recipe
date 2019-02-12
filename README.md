@@ -12,5 +12,3 @@ stuff that's in progress.
 - [ ] Upload photos.
 - [ ] Comment on recipies.
 - [ ] See what "friends" are up to.
-
-Any questions/comments let me know [@tlreiff](https://twitter.com/tlreiff)
